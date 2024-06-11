@@ -1,1 +1,164 @@
-test
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        header h1 {
+            font-family: 'Georgia', serif;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px #000;
+        }
+        nav {
+            background-color: #808080;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 10px;
+        }
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            width: calc(100% - 20px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card .details {
+            padding: 15px;
+            display: none;
+        }
+        .card.active .details {
+            display: block;
+        }
+        .card .description {
+            margin: 10px 0;
+        }
+        .card .description.short {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card .rating {
+            color: #FFD700;
+            display: none;
+        }
+        .card.active .rating {
+            display: block;
+        }
+        .rating span {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="https://via.placeholder.com/40x40?text=📷" alt="Logo">
+    <h1>Rate This Spot</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="login_page_with_navbar.html">Login</a>
+    <a href="registration_page.html">Register</a>
+    <a href="rate_me.html">Rate Me</a>
+</nav>
+
+<div class="container">
+    <div class="card" onclick="toggleDetails(this)">
+        <img src="https://www.w3schools.com/w3images/mountains.jpg" alt="Landscape 1">
+        <div class="description short">Beautiful mountains with a clear sky.</div>
+        <div class="details">
+            <div class="description">Beautiful mountains with a clear sky. Perfect for hiking and enjoying nature.</div>
+            <div class="rating">
+                Rating: <span>★★★★★</span>
+            </div>
+        </div>
+    </div>
+    <div class="card" onclick="toggleDetails(this)">
+        <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Landscape 2">
+        <div class="description short">City lights at night.</div>
+        <div class="details">
+            <div class="description">City lights at night. The vibrant city life is captured beautifully.</div>
+            <div class="rating">
+                Rating: <span>★★★★☆</span>
+            </div>
+        </div>
+    </div>
+    <div class="card" onclick="toggleDetails(this)">
+        <img src="https://www.w3schools.com/w3images/nature.jpg" alt="Landscape 3">
+        <div class="description short">Lush green forest.</div>
+        <div class="details">
+            <div class="description">Lush green forest. A perfect place to connect with nature and unwind.</div>
+            <div class="rating">
+                Rating: <span>★★★☆☆</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Rate this spot. By Ashfaqh Muhammad.</p>
+</footer>
+
+<script>
+    function toggleDetails(card) {
+        card.classList.toggle('active');
+    }
+</script>
+
+</body>
+</html>
